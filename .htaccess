@@ -1,0 +1,8 @@
+RewriteEngine On 
+#мы указали что будут перенаправления
+RewriteCond %{REQUEST_FILENAME} !-f  
+# если запрашиваемый файл не существует 
+RewriteCond %{REQUEST_FILENAME} !-d  
+#если директория не существует
+RewriteRule (.*) index.php?url=$1 [QSA,L] 
+#QSA разрешает передать GET-параметр, L(last)---говорит что перенаправление последние
